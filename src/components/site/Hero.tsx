@@ -10,19 +10,19 @@ export default function Hero() {
       id="home"
       className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{ 
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${data.heroBackground}')` 
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('${data.heroBackground}')` 
       }}
     >
       <div className="relative z-10 text-center text-white px-4 max-w-4xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
           {data.companyName}
         </h1>
-        <p className="text-xl md:text-2xl mb-8 animate-fade-in-delay">
+        <p className="text-xl md:text-3xl mb-8 animate-fade-in-delay">
           {data.slogan}
         </p>
         <button
           onClick={() => document.querySelector('#selection')?.scrollIntoView({ behavior: 'smooth' })}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-300 transform hover:scale-105"
+          className="bg-white text-zinc-800 px-8 py-3 rounded-lg font-semibold text-lg transition-transform duration-200 transform hover:scale-105 cursor-pointer"
         >
           Подобрать технику
         </button>

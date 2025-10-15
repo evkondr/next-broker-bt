@@ -3,7 +3,7 @@ import { SiteSettings, Promotion } from '@/types';
 export const initialSettings: SiteSettings = {
   companyName: 'БРОКЕР-БТ',
   slogan: 'Ваш персональный гид в мире бытовой техники',
-  heroBackground: 'hero-bg.png',
+  heroBackground: 'hero-bg.jpg',
   aboutText: `БРОКЕР-БТ - профессиональный сервис по подбору бытовой и встраиваемой техники, предоставляющий услуги полного цикла.
 
 Наши клиенты получают:

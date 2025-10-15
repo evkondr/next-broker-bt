@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin', 'cyrillic'] });
+const roboto = Roboto({
+  weight: '200',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'БРОКЕР-БТ - Ваш персональный гид в мире бытовой техники',
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         {children}
       </body>
     </html>
