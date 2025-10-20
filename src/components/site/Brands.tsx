@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { initialSettings } from '@/lib/fake-data';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -24,18 +22,20 @@ export default function Brands() {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
+          loop={true}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
             depth: 100,
-            modifier: 2.5,
+            modifier: 1,
+            scale: 1,
             slideShadows: false,
           }}
           pagination={{
             clickable: true,
           }}
           navigation={true}
-          modules={[EffectCoverflow, Pagination, Navigation]}
+          modules={[Pagination, Navigation]}
           className="brands-swiper"
           breakpoints={{
             320: {
@@ -53,8 +53,8 @@ export default function Brands() {
           }}
         >
           {data.brands.map((brand, index) => (
-            <SwiperSlide key={index} className="!w-auto">
-              <div className="bg-gray-100 rounded-lg p-6 w-48 h-24 flex items-center justify-center border-2 border-gray-200 transition-all duration-300 hover:border-blue-500">
+            <SwiperSlide key={index}>
+              <div className="bg-gray-100 m-auto rounded-lg p-6 w-48 h-24 flex items-center justify-center border-2 border-gray-200 transition-all duration-300 hover:border-blue-500">
                 <div className="text-gray-400 text-sm font-medium text-center">
                   {brand.split('/').pop()?.replace('.png', '')?.toUpperCase()}
                 </div>
@@ -82,30 +82,6 @@ export default function Brands() {
             opacity: 0.7;
           }
           
-          .brands-swiper .swiper-pagination-bullet {
-            background: #d1d5db;
-            opacity: 1;
-          }
-          
-          .brands-swiper .swiper-pagination-bullet-active {
-            background: #2563eb;
-          }
-          
-          .brands-swiper .swiper-button-next,
-          .brands-swiper .swiper-button-prev {
-            color: #2563eb;
-            background: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-          }
-          
-          .brands-swiper .swiper-button-next:after,
-          .brands-swiper .swiper-button-prev:after {
-            font-size: 16px;
-            font-weight: bold;
-          }
         `}</style>
       </div>
     </section>
