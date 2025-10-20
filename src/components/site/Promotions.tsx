@@ -6,6 +6,7 @@ import { Promotion } from '@/types';
 
 // Import Swiper styles
 import 'swiper/css';
+import { Navigation, Pagination } from 'swiper/modules';
 
 export default function Promotions() {
   return (
@@ -14,14 +15,29 @@ export default function Promotions() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
           Акции и предложения
         </h2>
-      </div>
-      <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      className=" flex justify-items-center"
-    >
+        <Swiper
+        className='!p-10'
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
+      >
       {initialPromotions.map((promotion) => (
         <SwiperSlide key={promotion.id}>
           <div className="bg-white rounded-xl flex flex-col shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-[500]">
@@ -48,6 +64,8 @@ export default function Promotions() {
         </SwiperSlide>
       ))}
     </Swiper>
+      </div>
+      
     </section>
   );
 }

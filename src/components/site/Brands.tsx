@@ -23,14 +23,6 @@ export default function Brands() {
           centeredSlides={true}
           slidesPerView={'auto'}
           loop={true}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            scale: 1,
-            slideShadows: false,
-          }}
           pagination={{
             clickable: true,
           }}
