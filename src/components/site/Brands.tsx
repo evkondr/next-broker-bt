@@ -6,6 +6,7 @@ import { initialSettings } from '@/lib/fake-data';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 
 export default function Brands() {
   const data = initialSettings;
@@ -16,16 +17,14 @@ export default function Brands() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
           Наши бренды
         </h2>
-
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={'auto'}
-          loop={true}
           pagination={{
             clickable: true,
           }}
+          initialSlide={Math.round(data.brands.length / 2)}
           navigation={true}
           modules={[Pagination, Navigation]}
           className="brands-swiper"
@@ -46,10 +45,13 @@ export default function Brands() {
         >
           {data.brands.map((brand, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-100 m-auto rounded-lg p-6 w-48 h-24 flex items-center justify-center border-2 border-gray-200 transition-all duration-300 hover:border-blue-500">
-                <div className="text-gray-400 text-sm font-medium text-center">
-                  {brand.split('/').pop()?.replace('.png', '')?.toUpperCase()}
-                </div>
+              <div className="m-auto rounded-lg w-48 h-24 flex items-center justify-center transition-all duration-300">
+                <Image
+                 width={192}
+                 height={96}
+                 src={`/${brand}`}
+                 alt='лого'
+                />
               </div>
             </SwiperSlide>
           ))}
