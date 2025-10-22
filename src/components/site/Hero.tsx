@@ -14,15 +14,16 @@ export default function Hero() {
       }}
     >
       <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-bold mb-3 animate-fade-in">
           {data.companyName}
         </h1>
+        <div className="w-full bg-yellow-200/20 h-[1px] mb-3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent shadow-[0_0_15px_3px_rgba(255,165,0,0.5)]"></div>
         <p className="text-xl md:text-3xl mb-8 animate-fade-in-delay">
           {data.slogan}
         </p>
         <button
           onClick={() => document.querySelector('#selection')?.scrollIntoView({ behavior: 'smooth' })}
-          className="bg-white text-zinc-800 px-8 py-3 rounded-lg font-semibold text-lg transition-transform duration-200 transform hover:scale-105 cursor-pointer"
+          className="bg-yellow-200 text-zinc-800 px-8 py-3 rounded-lg font-semibold text-lg transition-transform duration-200 transform hover:scale-105 cursor-pointer"
         >
           Подобрать технику
         </button>
