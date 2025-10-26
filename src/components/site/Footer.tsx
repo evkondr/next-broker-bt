@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -7,13 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Лого и описание */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-                BB
-              </div>
-              <span className="text-xl font-bold">БРОКЕР-БТ</span>
-            </div>
-            <p className="text-gray-400 max-w-md">
+            <Image  width={150} height={50} src="/logo.png" alt="Логотип компании Брокер-БТ" />
+            <p className="text-gray-400 max-w-md mt-3">
               Ваш персональный гид в мире бытовой техники. Профессиональный подбор 
               и комплексное оснащение объектов любой сложности.
             </p>
