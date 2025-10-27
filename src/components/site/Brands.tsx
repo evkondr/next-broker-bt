@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { delayOpacity } from '@/lib/animation-settings';
 
 export default function Brands() {
   const data = initialSettings;
@@ -17,7 +19,8 @@ export default function Brands() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
           Наши бренды
         </h2>
-        <Swiper
+        <motion.div {...delayOpacity}>
+          <Swiper
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
@@ -56,6 +59,8 @@ export default function Brands() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </motion.div>
+        
 
         <style jsx global>{`
           .brands-swiper {

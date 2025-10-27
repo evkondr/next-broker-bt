@@ -1,7 +1,10 @@
+'use client'
 import { initialSettings } from '@/lib/fake-data';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { fadeByX } from '@/lib/animation-settings';
 
 
 export default function Contacts() {
@@ -16,7 +19,7 @@ export default function Contacts() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Реквизиты */}
-          <div className="space-y-6">
+          <motion.div {...fadeByX(-50)} className="space-y-6">
             <h3 className="text-2xl font-semibold mb-6 text-blue-300">
               Реквизиты компании
             </h3>
@@ -25,10 +28,10 @@ export default function Contacts() {
                 {data.contacts.requisites}
               </pre>
             </div>
-          </div>
+          </motion.div>
 
           {/* Контактная информация */}
-          <div className="space-y-6">
+          <motion.div {...fadeByX(50)} className="space-y-6">
             <h3 className="text-2xl font-semibold mb-6 text-blue-300">
               Свяжитесь с нами
             </h3>
@@ -105,7 +108,7 @@ export default function Contacts() {
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

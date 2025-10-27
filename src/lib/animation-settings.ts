@@ -1,9 +1,9 @@
 import { MotionProps } from "motion/react";
 
-export const heroAnimate:MotionProps = {
+export const fadeByY = (y:number):MotionProps => ({
   initial: {
     opacity: 0,
-    y: 50
+    y,
   },
   whileInView: {
     opacity: 1,
@@ -15,16 +15,16 @@ export const heroAnimate:MotionProps = {
   viewport:{
     once: true
   }
-}
-export const heroAnimateWithDelay:MotionProps = {
-  ...heroAnimate,
+})
+export const fadeByYWithDelay = (y:number):MotionProps => ({
+  ...fadeByY(y),
   transition: {
     duration: 0.5,
     delay: 0.3
   }
-}
+})
 export const delayOpacity = {
-   initial: {
+  initial: {
     opacity: 0,
   },
   whileInView: {
@@ -36,5 +36,24 @@ export const delayOpacity = {
   },
   viewport:{
     once: true
+  }
+}
+export const fadeByX = (x:number):MotionProps => {
+  return {
+    initial: {
+      opacity: 0,
+      x
+    },
+    whileInView: {
+      opacity: 1,
+      x: 0
+    },
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+    viewport:{
+      once: true
+    }
   }
 }

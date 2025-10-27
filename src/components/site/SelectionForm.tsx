@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ContactFormData } from '@/types';
+import { motion } from 'motion/react';
+import { fadeByY } from '@/lib/animation-settings';
 
 export default function SelectionForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,7 +72,7 @@ export default function SelectionForm() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-50 rounded-xl p-8 shadow-lg">
+          <motion.form {...fadeByY(100)} onSubmit={handleSubmit(onSubmit)} className="bg-gray-50 rounded-xl p-8 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -158,7 +160,7 @@ export default function SelectionForm() {
             <p className="text-center text-gray-500 text-sm mt-4">
               Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
             </p>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

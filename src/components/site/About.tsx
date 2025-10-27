@@ -1,5 +1,8 @@
+'use client'
 import { initialSettings } from '@/lib/fake-data';
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { fadeByX } from '@/lib/animation-settings';
 
 const About = () => {
   const data = initialSettings;
@@ -12,7 +15,7 @@ const About = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Текстовая часть */}
-          <div className="space-y-6">
+          <motion.div {...fadeByX(-30)} className="space-y-6">
             <div className="prose prose-lg max-w-none text-xl">
               {data.aboutText.split('\n\n').map((paragraph, index) => (
                 <p key={index} className="leading-relaxed">
@@ -20,10 +23,10 @@ const About = () => {
                 </p>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Фото руководителя с цитатой */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <motion.div {...fadeByX(30)} className="bg-white rounded-xl shadow-lg p-8">
             <div className="flex flex-col items-center text-center">
               <div className="w-32 h-32 bg-gray-200 rounded-full mb-6 overflow-hidden">
                 <Image
@@ -45,7 +48,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
