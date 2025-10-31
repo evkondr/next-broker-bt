@@ -9,6 +9,7 @@ import { motion } from 'motion/react';
 import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
 import { delayOpacity } from '@/lib/animation-settings';
+import Image from 'next/image';
 
 export default function Promotions() {
   return (
@@ -41,13 +42,11 @@ export default function Promotions() {
                 },
               }}
             >
-            {initialPromotions.map((promotion) => (
+            {initialPromotions.map((promotion, index) => (
               <SwiperSlide key={promotion.id}>
                 <div className="bg-white rounded-xl flex flex-col shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-[500]">
-                      <div className="h-48 bg-gray-200 flex items-center justify-center flex-1">
-                        <div className="text-gray-500">
-                          Изображение акции
-                        </div>
+                      <div className="h-58 bg-gray-200 overflow-hidden">
+                        <Image className="w-full h-full object-cover" src={index == 2 ? '/franke-promo-oct2024.png' : '/smeg-promo-2024.jpg'} width={459} height={344} alt=""/>
                       </div>
                       <div className="p-6 flex flex-col justify-between flex-1">
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
