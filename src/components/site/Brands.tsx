@@ -33,7 +33,7 @@ export default function Brands() {
           className="brands-swiper"
           breakpoints={{
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 15,
             },
             768: {
